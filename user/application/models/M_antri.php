@@ -6,7 +6,8 @@ class M_antri extends CI_Model {
 
     public function get_no_antri(){
         $huruf = "A";
-        $cd = $this->db->query("SELECT MAX(RIGHT(no_antri,3)) AS kd_max FROM antrian WHERE DATE(tanggal)=CURDATE()");
+        // $cd = $this->db->query("SELECT MAX(RIGHT(no_antri,3)) AS kd_max FROM antrian WHERE DATE(tanggal)=CURDATE()");
+        $cd = $this->db->query("SELECT MAX(RIGHT(no_antri,3)) AS kd_max FROM antrian");
         $kd = "";
         if($cd->num_rows()>0){
             foreach($cd->result() as $k){

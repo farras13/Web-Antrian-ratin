@@ -23,7 +23,11 @@ class Antri extends CI_Controller {
         $no_antric=$this->input->post('no_antric');
         $no_antrid=$this->input->post('no_antrid');
         $this->load->view('template/footer');
-    }
+	}
+	public function ShowAntri()
+	{
+		$this->load->view('home/show');
+	}
 
     public function simpan_no(){
         $no_antri=$this->input->post('no_antri');
