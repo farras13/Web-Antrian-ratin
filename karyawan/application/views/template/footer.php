@@ -55,7 +55,8 @@
     				}
 
     			});
-    		}
+			}
+			setInterval(tampil_data_barang,1080);
     	});
     </script>
 
