@@ -12,12 +12,18 @@ class Antri extends CI_Controller {
     public function index()
     {
         $data['title']='Sistem Antrian';
-        $data['antrian']=$this->m_antri->get_no_antri();
+        // $data['antrian']=$this->m_antri->get_no_antri();
         $data['tanggal']=date('d-M-Y');
         $this->load->view('template/header',$data);
-        $this->load->view('home/v_antri', $data);
+        $this->load->view('home/v_antri');
         $this->load->view('template/footer');
-    }
+	}
+	
+	public function get_antriA()
+	{
+		$data = $this->m_antri->get_no_antri();
+		echo json_encode($data);
+	}
     
     public function reset_no()
     {
